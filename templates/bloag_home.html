@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block body %}
+<style>
+  a {
+    text-decoration: none !important;
+  }
+</style>
+
+<h1 class="my-4 text-center">Welcome to mountain coders Blog</h1>
+<div class="container">
+  {% for b in blog %}
+    <div class="media">
+      <!-- <img class="mr-3" src="..." alt="Generic placeholder image"> -->
+      <div class="media-body">
+        <h3 class="mt-0 my-2">
+          <a href="/blogpost/{{b.slug}}" class="text-dark">{{ b.title |safe }}</a>
+        </h3>
+        {{ b.content |slice:"145" |safe }}..
+      </div>
+      <a href="/blogpost/{{b.slug}}" class="text-dark">
+        <div class="button btn btn-outline-primary my-2">Read more....</div>
+      </a>
+    </div>
+  {% endfor %}
+  <div class="my-4">
+    {% if prev %}
+        <a href="{{ prev }}" class="btn btn-primary">Previous</a>
+    {% else %}
+        <button class="btn btn-primary" disabled>Previous</button>
+    {% endif %}
+    
+    <span class="mx-2">Page {{ current_page }} of {{ total_pages }}</span>
+    
+    {% if nxt %}
+        <a href="{{ nxt }}" class="btn btn-primary float-end">Next</a>
+    {% else %}
+        <button class="btn btn-primary float-end" disabled>Next</button>
+    {% endif %}
+</div>
+</div>
+{% endblock body %}
+{% block title %}Blog Home-page{% endblock title %}
+{% block blogactive %}active{% endblock blogactive %}
+
+
+

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+<style>
+    .img{
+        width: 100%;
+        height: 500px;
+    }
+</style>
+{% block body %}
+<div class="container-fluid">
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static "/img/slider1.jpg" %}" class="d-block w-100 img" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "/img/slider2.jpg" %}" class="d-block w-100 img" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static "/img/slider1.jpg" %}" class="d-block w-100 img" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container ">
+          <h1 class="text-center my-3">Why you choosed this??</h1>
+        <div class="row my-4">
+        <div class="col-md-4 ">
+           <img src="{% static "/img/slider1.jpg" %}" class="d-block w-100" alt="" srcset="">
+           <h3>Services</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sapiente ratione totam amet esse! Temporibus aspernatur assumenda a aliquid quae illum minima eveniet autem at.</p>
+        </div>
+        <div class="col-md-4 ">
+            <img src="{% static "/img/slider2.jpg" %}"class="d-block w-100" alt="" srcset="">
+            <h3>Developers</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sapiente ratione totam amet esse! Temporibus aspernatur assumenda a aliquid quae illum minima eveniet autem at.</p>
+                
+            </div>
+            <div class="col-md-4">
+                <img src="{% static "/img/slider1.jpg" %}"class="d-block w-100" alt="" srcset="">
+                <h3>Designers</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sapiente ratione totam amet esse! Temporibus aspernatur assumenda a aliquid quae illum minima eveniet autem at.</p>
+            </div>
+        </div>
+      </div>
+</div>
+{% endblock body %}  
+{% block homeactive %}active{% endblock homeactive %}
