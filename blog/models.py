@@ -10,11 +10,11 @@ class Blog(models.Model):
     def __str__(self) -> str:
         return self.title
 
-class contact(models.Model):
-    name=models.CharField(max_length=80)
-    email=models.EmailField(max_length=55)
-    phone=models.IntegerField(max_length=12)
-    desc=models.TextField()
+class Contact(models.Model):  # Capitalize model name for Django convention
+    name = models.CharField(max_length=80)
+    email = models.EmailField(max_length=55)
+    phone = models.CharField(max_length=12)  # Use CharField for phone numbers
+    desc = models.TextField()
 
-    def __str__(self)->str:
+    def __str__(self) -> str:
         return self.name

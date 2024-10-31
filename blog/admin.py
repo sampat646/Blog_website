@@ -9,4 +9,4 @@ class BlogAdmin(admin.ModelAdmin):
             'all': ('css/test.css',)
         }
 admin.site.register(Blog, BlogAdmin)
-admin.site.register(contact)
+admin.site.register(Contact)
